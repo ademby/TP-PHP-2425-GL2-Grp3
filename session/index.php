@@ -7,12 +7,14 @@ $message = $sessionManager->run();
 ?>
 
 <?php require __DIR__ . "/fragments/head.php"; ?> 
-<body>
-    <div class="container">
+<body class="d-flex flex-column min-vh-100">
+    <div class="container flex-grow-1 py-4">
         <h1> <?= htmlspecialchars($title); ?> </h1>
-        <p> <?= htmlspecialchars($message); ?> </p>
-        <form method="post">
-            <button type="submit" name="reset">Réinitialiser la session</button>
+        <div class="alert alert-info"> 
+                <?= htmlspecialchars($message); ?> 
+        </div>
+        <form method="post" class="text-center">
+            <button type="submit" name="reset" class="btn btn-danger">Réinitialiser la session</button>
         </form>
     </div>
 </body>

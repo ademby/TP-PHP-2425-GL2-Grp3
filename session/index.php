@@ -1,7 +1,7 @@
 <?php require __DIR__ . "/core/autoLoader.php"; ?> 
 
 <?php 
-$title = "Session Management";
+$title = "Gestion de Session";
 $sessionManager = new SessionManager();
 $message = $sessionManager->run();
 ?>
@@ -12,7 +12,7 @@ $message = $sessionManager->run();
         <h1> <?= htmlspecialchars($title); ?> </h1>
         <p> <?= htmlspecialchars($message); ?> </p>
         <form method="post">
-            <button type="submit" name="reset">Reset Session</button>
+            <button type="submit" name="reset">Réinitialiser la session</button>
         </form>
     </div>
 </body>

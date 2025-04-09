@@ -1,11 +1,15 @@
-<?php $title = "Home" ?>
-<?php include_once "core/autoLoader.php" ?> 
-<?php require "fragments/head.php" ?> 
+<?php require __DIR__ . "/core/autoLoader.php"; ?> 
+
+<?php 
+$title = "Home";
+?>
+
+<?php require __DIR__ . "/fragments/head.php"; ?> 
 <body>
-    <div class="container">
+<div class="container">
         <h1>
-            <?php echo "Welcome to the official page of the ex nb # !!" ?> 
+            <?= htmlspecialchars($title); ?> 
         </h1>
     </div>
 </body>
-<?php require "fragments/footer.php" ?> 
+<?php require __DIR__ . "/fragments/footer.php"; ?> 

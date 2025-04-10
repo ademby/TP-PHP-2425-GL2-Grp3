@@ -29,12 +29,14 @@ $title = "INSAT SMS";
         <p>
           <br>
           He have set things up for you, just follow this link :
-          <a href="./db_init.php"> Initialize Database</a>
+          <a href="./db_init.php"> (Re)Initialize Database</a>
           <br><br>
           (It will create a database, add the required tables and insert data.)
           <br>
           Consider reinitializing the database if you have deleted a lot of data.
         </p>
+        <!-- GET Messages -->
+        <?php include "./fragments/getResponse.php"?>
         <?php if (isset($_GET['init'])) { ?>
           <div class="container alert alert-success">
               Successfully initializing the database. Does it work ? Don't touch it... No no no, touch it, touch it... just kidding.

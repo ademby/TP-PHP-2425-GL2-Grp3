@@ -39,6 +39,9 @@ $students = [
     new Student("Jeffrey", new DateTime("04-04-2004"), 'images/jeffrey.jpg', 'RT' ),
     new Student("Justin" , new DateTime("03-03-2003"), 'images/justin.jpg' , 'IMI'),
     new Student("Olly"   , new DateTime("02-02-2002"), 'images/olly.jpg'   , 'GL' ),
+    new Student("Elizeu" , new DateTime("02-02-2002"), 'images/elizeu.jpg' , 'GL' ),
+    new Student("Midas"  , new DateTime("02-02-2002"), 'images/midas.jpg'  , 'RT' ),
+    new Student("Saung"  , new DateTime("02-02-2002"), 'images/saung.jpg'   , 'RT' ),
 ];
 
 $users = [

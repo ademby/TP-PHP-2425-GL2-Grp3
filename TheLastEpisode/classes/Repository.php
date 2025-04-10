@@ -29,6 +29,27 @@ abstract class Repository implements RepositoryInterface {
         }
         return $response->fetch(PDO::FETCH_OBJ);
     }
+    /**
+     * Returns NULL when everythg alright
+     */
+    public function update ($id, $params){
+        $setParts = [];
+        foreach ($params as $k=>$v) {
+            $setParts[] = "$k = '$v'";
+        }
+        $setString = implode(', ', $setParts);
+        
+        $request = "UPDATE {$this->tableName} SET $setString WHERE id = :id ;";
+
+        $response = $this->db->prepare($request);
+        try{
+            $response->execute(['id' => $id]);
+        }catch (Exception $e) {
+            return [ 'errorMsg' => $e->getMessage() ];
+        }
+        return $response->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function findAll (){
         $query = "SELECT * from {$this->tableName}";
         try{
@@ -48,6 +69,9 @@ abstract class Repository implements RepositoryInterface {
         }
         return $response->fetch(PDO::FETCH_ASSOC);
     }
+    /**
+     * Returns NULL when everythg alright
+     */
     public function deleteById  ($id){
         $query = "delete from {$this->tableName} where id = :id";
         $response = $this->db->prepare($query);
@@ -58,6 +82,9 @@ abstract class Repository implements RepositoryInterface {
         }
         return NULL;
     }
+    /**
+     * Returns the names of the fields
+     */
     public function tableColumns(){
         try{
             return $this->db->query("DESCRIBE $this->tableName")->fetchAll(PDO::FETCH_COLUMN);

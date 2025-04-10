@@ -12,6 +12,7 @@ $StuRepo = new StudentRepository();
 
 if ( (! isset($_GET['id']) || ! is_numeric($_GET['id']) ) ){
     header("Location:studentsPage.php?errorMsg=Forbidden Operation");
+    exit;
 }
 
 $id = intval($_GET['id']);
@@ -21,6 +22,7 @@ $data = $StuRepo->findById($id);
 
 if (! $data ){
     header("Location:studentsPage.php?errorMsg=No entries with the given Id");
+    exit;
 }
 
 /**

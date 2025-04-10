@@ -1,5 +1,5 @@
-
+strip_tags on all $_GET and $_POST
 
 delete notes when you finish
 
-create - update : links and repositories (section - student)
+A problem in the pdf exporter (how images, or remove them)

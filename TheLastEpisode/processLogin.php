@@ -14,15 +14,15 @@ if (isset($user) && isset($password)) {
 
     if ($test === true) {
         $_SESSION['user'] = $user;
-        header("Location:index.php");
+        header("Location:index.php");exit;
     }
 
     else if (isset($_GET['errorMsg'])) {
-        header("Location:login.php?errorMessage={$_GET['errorMsg']}");
+        header("Location:login.php?errorMsg={$_GET['errorMsg']}");exit;
     }
     
     else {
-        header("Location:login.php?errorMessage=Veuillez vérifier vos crédentials");
+        header("Location:login.php?errorMsg=Veuillez vérifier vos crédentials");exit;
     }
 }
 

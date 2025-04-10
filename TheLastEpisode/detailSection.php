@@ -12,6 +12,7 @@ $SecRepo = new SectionRepository();
 
 if ( (! isset($_GET['id']) || ! is_numeric($_GET['id']) ) ){
     header("Location:sectionsPage.php?errorMsg=Forbidden Operation");
+    exit;
 }
 
 $id = intval($_GET['id']);
@@ -21,6 +22,7 @@ $data = $SecRepo->findById($id);
 
 if (! $data ){
     header("Location:sectionsPage.php?errorMsg=No entries with the given Id");
+    exit;
 }
 
 $section = $data;

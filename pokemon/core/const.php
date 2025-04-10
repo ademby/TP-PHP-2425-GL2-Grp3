@@ -13,9 +13,9 @@ define("PK_T", [
     PK_T_W => IMAGES_DIR . PK_T_W . ".png", 
     PK_T_G => IMAGES_DIR . PK_T_G . ".png", 
 ]);
+define("PK_T_LEN", count(PK_T));
 
 // pokemon list
-
 define("PK_LIST", [
     [
         "name" => "staraptor",
@@ -25,7 +25,7 @@ define("PK_LIST", [
         "minAtk" => 130,
         "maxAtk" => 180,
         "critCoef" => 1.5,
-        "critProb" => 0.3,
+        "critProb" => 30,
     ],
     [
         "name" => "snorlax",
@@ -35,7 +35,7 @@ define("PK_LIST", [
         "minAtk" => 125,
         "maxAtk" => 160,
         "critCoef" => 1.5,
-        "critProb" => 0.2,
+        "critProb" => 20,
     ],
     [
         "name" => "ursaring",
@@ -45,7 +45,7 @@ define("PK_LIST", [
         "minAtk" => 120,
         "maxAtk" => 150,
         "critCoef" => 2.0,
-        "critProb" => 0.3,
+        "critProb" => 30,
     ],
     [
         "name" => "arcanine",
@@ -55,7 +55,7 @@ define("PK_LIST", [
         "minAtk" => 120,
         "maxAtk" => 150,
         "critCoef" => 3.0,
-        "critProb" => 0.3,
+        "critProb" => 30,
     ],
     [
         "name" => "ninetales",
@@ -65,7 +65,7 @@ define("PK_LIST", [
         "minAtk" => 100,
         "maxAtk" => 120,
         "critCoef" => 4.0,
-        "critProb" => 0.3,
+        "critProb" => 30,
     ],
     [
         "name" => "lapras",
@@ -75,7 +75,7 @@ define("PK_LIST", [
         "minAtk" => 130,
         "maxAtk" => 170,
         "critCoef" => 1.5,
-        "critProb" => 0.2,
+        "critProb" => 20,
     ],
     [
         "name" => "floatzel",
@@ -85,7 +85,7 @@ define("PK_LIST", [
         "minAtk" => 140,
         "maxAtk" => 230,
         "critCoef" => 3.0,
-        "critProb" => 0.2,
+        "critProb" => 20,
     ],
     [
         "name" => "roserade",
@@ -95,7 +95,7 @@ define("PK_LIST", [
         "minAtk" => 100,
         "maxAtk" => 140,
         "critCoef" => 4.0,
-        "critProb" => 0.35,
+        "critProb" => 35,
     ],
     [
         "name" => "leafeon",
@@ -105,22 +105,34 @@ define("PK_LIST", [
         "minAtk" => 130,
         "maxAtk" => 170,
         "critCoef" => 2.0,
-        "critProb" => 0.2,
+        "critProb" => 20,
     ],
 
 ]);
+define("PK_LIST_LEN", count(PK_LIST));
+
 // normal pokemon list
 define ("PK_LIST_N", [
     PK_LIST[0],
     PK_LIST[1],
     PK_LIST[2],
 ]);
+define("PK_LIST_N_LEN", count(PK_LIST_N));
 
 // damage multipliers 
 define("DMG_MUL", [
-    PK_T_F . ">" . PK_T_W => 2.0,
+    PK_T_F . ">" . PK_T_G => 2.0,
+    PK_T_F . ">" . PK_T_W => 0.5,
+    PK_T_F . ">" . PK_T_F => 0.5,
+
+    PK_T_W . ">" . PK_T_F => 2.0,
+    PK_T_W . ">" . PK_T_W => 0.5,
+    PK_T_W . ">" . PK_T_G => 0.5, 
+
+    PK_T_G . ">" . PK_T_W => 2.0,
+    PK_T_G . ">" . PK_T_F => 0.5,
+    PK_T_G . ">" . PK_T_G => 0.5, 
 ]);
-
-
+define("DMG_MUL_LEN", count(PK_LIST));
 
 ?>
